@@ -23,3 +23,13 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Handle form submission (optional for redirect)
+function handleSignup(event) {
+    // Prevent the form from submitting immediately
+    event.preventDefault();
+    
+    // Simulate a successful signup by redirecting to the success page
+    window.location.href = "success.html";
+}
+
