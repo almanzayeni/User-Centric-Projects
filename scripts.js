@@ -33,3 +33,44 @@ function handleSignup(event) {
     window.location.href = "success.html";
 }
 
+// Autocomplete for search bar
+const searchInput = document.querySelector('#search-input');
+const suggestions = ['Malaysia', 'Immigration policies', 'Visa requirements', 'Work opportunities', 'Living abroad', 'Studying abroad']; // Example suggestions
+
+// Function to show autocomplete suggestions
+function showSuggestions() {
+    const query = searchInput.value.toLowerCase();
+    const suggestionList = document.querySelector('.autocomplete-suggestions');
+    suggestionList.innerHTML = ''; // Clear previous suggestions
+
+    if (query.length > 0) {
+        const filteredSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
+        
+        filteredSuggestions.forEach(suggestion => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.textContent = suggestion;
+            suggestionItem.classList.add('suggestion-item');
+            suggestionItem.onclick = function() {
+                searchInput.value = suggestion;
+                suggestionList.innerHTML = ''; // Clear suggestions after selection
+                if (suggestion === 'Malaysia') {
+                    window.location.href = 'malaysia.html'; // Redirect to Malaysia page
+                }
+            };
+            suggestionList.appendChild(suggestionItem);
+        });
+    }
+}
+
+// Event listener to trigger autocomplete
+searchInput.addEventListener('input', showSuggestions);
+
+// Optional: Clear suggestions when clicking outside
+document.addEventListener('click', function(event) {
+    const suggestionList = document.querySelector('.autocomplete-suggestions');
+    if (!searchInput.contains(event.target) && !suggestionList.contains(event.target)) {
+        suggestionList.innerHTML = ''; // Clear suggestions
+    }
+});
+
+
