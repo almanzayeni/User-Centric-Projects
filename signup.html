@@ -12,32 +12,36 @@
     </header>
 
     <main class="container">
-        <form id="signupForm" action="success.html" method="GET" onsubmit="return handleSignup(event)">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            
-            <button type="submit">Sign Up</button>
-        </form>
+        <!-- Button to open the modal -->
+        <button id="signupBtn" class="signup-btn">Sign Up</button>
+
+        <!-- Modal structure -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Sign Up</h2>
+                <form id="signupForm" action="success.html" method="GET" onsubmit="return handleSignup(event)">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Global Pathways. All rights reserved.</p>
     </footer>
 
-    <script>
-        function handleSignup(event) {
-            // Prevent the form from submitting immediately
-            event.preventDefault();
-            
-            // Simulate a successful signup by redirecting to the success page
-            window.location.href = "success.html";
-        }
-    </script>
+    <!-- Link to external script -->
+    <script src="script.js"></script>
 </body>
 </html>
+
