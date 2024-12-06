@@ -3,28 +3,29 @@ var modal = document.getElementById("signupModal");
 var signupBtn = document.getElementById("signupBtn");
 var closeBtn = document.getElementsByClassName("close-btn")[0];
 
-// Open the modal
+// Open the modal when the signup button is clicked
 signupBtn.onclick = function() {
     modal.style.display = "block";
 }
 
-// Close the modal
+// Close the modal when the close button (x) is clicked
 closeBtn.onclick = function() {
     modal.style.display = "none";
 }
 
-// Close the modal if clicked outside
+// Close the modal if the user clicks outside of the modal
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
-// Handle Search Bar and Autocomplete
+// Search Bar and Autocomplete Logic
 const searchInput = document.querySelector('#search-input');
 const searchButton = document.querySelector('#search-btn'); // Target the search button
-const suggestions = ['Malaysia', 'Immigration policies', 'Visa requirements', 'Work opportunities', 'Living abroad', 'Studying abroad']; 
+const suggestions = ['Malaysia', 'Immigration policies', 'Visa requirements', 'Work opportunities', 'Living abroad', 'Studying abroad'];
 
+// Function to show autocomplete suggestions based on user input
 function showSuggestions() {
     const query = searchInput.value.toLowerCase();
     const suggestionList = document.querySelector('.autocomplete-suggestions');
@@ -49,8 +50,10 @@ function showSuggestions() {
     }
 }
 
+// Event listener for showing autocomplete suggestions
 searchInput.addEventListener('input', showSuggestions);
 
+// Optional: Clear suggestions when clicking outside
 document.addEventListener('click', function(event) {
     const suggestionList = document.querySelector('.autocomplete-suggestions');
     if (!searchInput.contains(event.target) && !suggestionList.contains(event.target)) {
@@ -58,7 +61,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Handle Search Button
+// Handle Search Button Click
 function handleSearch() {
     const searchInputValue = searchInput.value.trim().toLowerCase();
 
@@ -69,6 +72,5 @@ function handleSearch() {
     }
 }
 
-searchButton.addEventListener('click', handleSearch); // Added click event for the search button
-
-}
+// Event listener for the search button
+searchButton.addEventListener('click', handleSearch);
