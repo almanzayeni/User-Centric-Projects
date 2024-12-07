@@ -74,3 +74,4 @@ function handleSearch() {
 
 // Event listener for the search button
 searchButton.addEventListener('click', handleSearch);
+
