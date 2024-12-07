@@ -20,58 +20,60 @@ window.onclick = function(event) {
     }
 }
 
-// Search Bar and Autocomplete Logic
-const searchInput = document.querySelector('#search-input');
-const searchButton = document.querySelector('#search-btn'); // Target the search button
-const suggestions = ['Malaysia', 'Immigration policies', 'Visa requirements', 'Work opportunities', 'Living abroad', 'Studying abroad'];
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.querySelector('#search-input');
+    const searchButton = document.querySelector('#search-btn');
+    const suggestionsBox = document.querySelector('#autocomplete-suggestions');
+    
+    const suggestions = ['Malaysia', 'Canada', 'Australia', 'Germany', 'Singapore', 'United States', 'United Kingdom']; // Add more countries or topics here
 
-// Function to show autocomplete suggestions based on user input
-function showSuggestions() {
-    const query = searchInput.value.toLowerCase();
-    const suggestionList = document.querySelector('.autocomplete-suggestions');
-    suggestionList.innerHTML = ''; // Clear previous suggestions
+    // Function to display autocomplete suggestions
+    function showSuggestions() {
+        const query = searchInput.value.toLowerCase();
+        suggestionsBox.innerHTML = ''; // Clear previous suggestions
 
-    if (query.length > 0) {
-        const filteredSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
+        if (query.length > 0) {
+            const filteredSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
 
-        filteredSuggestions.forEach(suggestion => {
-            const suggestionItem = document.createElement('div');
-            suggestionItem.textContent = suggestion;
-            suggestionItem.classList.add('suggestion-item');
-            suggestionItem.onclick = function() {
-                searchInput.value = suggestion;
-                suggestionList.innerHTML = ''; // Clear suggestions after selection
-                if (suggestion === 'Malaysia') {
-                    window.location.href = 'malaysia.html'; // Redirect to Malaysia page
-                }
-            };
-            suggestionList.appendChild(suggestionItem);
-        });
+            filteredSuggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.textContent = suggestion;
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.onclick = function () {
+                    searchInput.value = suggestion; // Set the input field with selected suggestion
+                    suggestionsBox.innerHTML = ''; // Clear suggestions
+                    handleSearch(); // Trigger search when suggestion is clicked
+                };
+                suggestionsBox.appendChild(suggestionItem);
+            });
+        }
     }
-}
 
-// Event listener for showing autocomplete suggestions
-searchInput.addEventListener('input', showSuggestions);
+    // Event listener for search input to show autocomplete suggestions
+    searchInput.addEventListener('input', showSuggestions);
 
-// Optional: Clear suggestions when clicking outside
-document.addEventListener('click', function(event) {
-    const suggestionList = document.querySelector('.autocomplete-suggestions');
-    if (!searchInput.contains(event.target) && !suggestionList.contains(event.target)) {
-        suggestionList.innerHTML = ''; // Clear suggestions
+    // Event listener to clear suggestions when clicked outside
+    document.addEventListener('click', function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+            suggestionsBox.innerHTML = ''; // Clear suggestions
+        }
+    });
+
+    // Function to handle the search when the search button is clicked
+    function handleSearch() {
+        const searchValue = searchInput.value.trim().toLowerCase();
+
+        if (searchValue === "malaysia") {
+            window.location.href = "malaysia.html"; // Redirect to Malaysia page
+        } else if (searchValue === "canada") {
+            window.location.href = "canada.html"; // Redirect to Canada page (add more as needed)
+        } else {
+            alert("No results found for: " + searchValue);
+        }
     }
+
+    // Search button click event
+    searchButton.addEventListener('click', handleSearch);
 });
 
-// Handle Search Button Click
-function handleSearch() {
-    const searchInputValue = searchInput.value.trim().toLowerCase();
-
-    if (searchInputValue === "malaysia") {
-        window.location.href = "malaysia.html"; // Redirect to Malaysia page
-    } else {
-        alert("No results found for '" + searchInputValue + "'");
-    }
-}
-
-// Event listener for the search button
-searchButton.addEventListener('click', handleSearch);
 
