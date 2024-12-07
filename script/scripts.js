@@ -6,26 +6,35 @@ var closeBtn = document.getElementsByClassName("close-btn")[0];
 // Open the modal when the signup button is clicked
 signupBtn.onclick = function() {
     modal.style.display = "block";
-}
+};
 
 // Close the modal when the close button (x) is clicked
 closeBtn.onclick = function() {
     modal.style.display = "none";
-}
+};
 
 // Close the modal if the user clicks outside of the modal
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.querySelector('#search-input');
     const searchButton = document.querySelector('#search-btn');
     const suggestionsBox = document.querySelector('#autocomplete-suggestions');
     
-    const suggestions = ['Malaysia', 'Canada', 'Australia', 'Germany', 'Singapore', 'United States', 'United Kingdom']; // Add more countries or topics here
+    // Autocomplete suggestions
+    const suggestions = [
+        'Malaysia',
+        'Canada',
+        'Australia',
+        'Germany',
+        'Singapore',
+        'United States',
+        'United Kingdom'
+    ]; // Add more countries or topics here
 
     // Function to display autocomplete suggestions
     function showSuggestions() {
