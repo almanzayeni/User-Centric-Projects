@@ -217,3 +217,92 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* User Info Styling */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info .user-avatar {
+    width: 40px; /* Adjust avatar size */
+    height: 40px; /* Maintain square shape */
+    border-radius: 50%;
+    margin-right: 10px; /* Space between avatar and text */
+}
+
+.user-info .username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-info .verified {
+    background-color: #28a745; /* Green for verified */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.9em;
+}
+
+/* Forum Post Styling */
+.forum-post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.forum-post h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.answer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.answer .user-info {
+    margin-bottom: 10px;
+}
+
+.answer p {
+    margin-top: 10px;
+}
+
+.post-answer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-answer h4 {
+    margin-top: 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
