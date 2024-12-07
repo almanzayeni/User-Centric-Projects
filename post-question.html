@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Question</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Post a Question</h1>
+    </header>
+
+    <main class="container">
+        <!-- Post a Question Form -->
+        <form id="questionForm" action="post-success.html" method="GET">
+            <label for="questionTitle">Question Title:</label>
+            <input type="text" id="questionTitle" name="questionTitle" required><br><br>
+
+            <label for="questionContent">Your Question:</label>
+            <textarea id="questionContent" name="questionContent" rows="4" required></textarea><br><br>
+
+            <button type="submit" id="postQuestionBtn">Post Question</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Global Pathways. All rights reserved.</p>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
