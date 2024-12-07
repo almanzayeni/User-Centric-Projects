@@ -119,23 +119,40 @@ header p {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.verified-name {
+.card a {
+    text-decoration: none;
+    color: #0066cc;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
-.checkmark {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-left: 5px;
+/* Forum Section */
+.forum-posts {
+    margin: 20px 0;
+}
+
+.forum-posts .post {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.forum-posts .post h3 {
+    margin-top: 0;
+}
+
+.forum-posts .post p {
+    font-style: italic;
 }
 
 /* Footer */
@@ -143,75 +160,8 @@ footer {
     background: #0066cc;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
 }
-
-/* Forum Posts */
-.forum-posts {
-    margin-top: 20px;
-}
-
-.post {
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.post h3 {
-    margin: 0;
-    color: #004080;
-}
-
-.post p {
-    margin: 5px 0;
-}
-
-/* Related Topics Section */
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #004080;
-}
-
-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-section ul li {
-    margin-bottom: 10px;
-}
-
-section ul li a {
-    text-decoration: none;
-    color: #0066cc;
-}
-
-section ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Formating Application Process */
-ol {
-    margin-left: 20px;
-}
-
-ol li {
-    margin-bottom: 10px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* Footer Adjustment */
-footer p {
-    font-size: 1em;
-    margin: 0;
-}
-
