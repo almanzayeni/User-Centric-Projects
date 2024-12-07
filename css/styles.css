@@ -1,331 +1,150 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Body Styling */
-body {
-    line-height: 1.6;
-    background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Navigation Bar */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #222;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004080;
-    color: white;
-    padding: 1em;
+    background: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
 }
 
-nav .logo {
+.logo {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
-nav .logo-img {
+.logo-img {
     width: 40px;
     height: 40px;
-    margin-right: 0.5em;
-    border-radius: 50%;
+    margin-right: 10px;
 }
 
-nav ul {
+ul {
     list-style: none;
     display: flex;
-    gap: 1em;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li a {
-    color: white;
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-nav .search-bar {
-    display: flex;
-    gap: 0.5em;
-}
-
-nav .search-bar input {
-    padding: 0.5em;
-    border: none;
-    border-radius: 5px;
-}
-
-nav .search-bar button {
-    padding: 0.5em;
-    background-color: #0073e6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav .search-bar button:hover {
-    background-color: #005bb5;
-}
-
-nav .auth-buttons a {
-    margin-left: 1em;
-    color: white;
+.auth-buttons a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5em 1em;
-    border: 1px solid white;
+    border: 2px solid #fff;
+    padding: 5px 10px;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-nav .auth-buttons a:hover {
-    background-color: white;
-    color: #004080;
+.auth-buttons a:hover {
+    background: #fff;
+    color: #0066cc;
 }
 
-/* Header Section */
+/* Header */
 header {
     text-align: center;
-    padding: 2em 1em;
-    background-color: #0073e6;
-    color: white;
+    background: #e3f2fd;
+    padding: 50px 20px;
 }
 
 header h1 {
     font-size: 2.5em;
-    margin-bottom: 0.5em;
+    margin: 0;
 }
 
 header p {
     font-size: 1.2em;
 }
 
-/* Main Content */
-.container {
-    padding: 2em 1em;
-}
-
+/* Section Styles */
 .main-section {
-    margin-bottom: 3em;
+    margin: 40px 0;
 }
 
-.main-section .heading {
+.heading {
     font-size: 1.8em;
+    margin-bottom: 10px;
     color: #004080;
-    text-align: center;
-    margin-bottom: 0.5em;
 }
 
-.main-section .sub-heading {
-    font-size: 1.2em;
-    color: #333;
-    text-align: center;
-    margin-bottom: 1.5em;
+.sub-heading {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
 }
 
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5em;
-    padding: 1em;
+    gap: 20px;
 }
 
 .card {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    padding: 1.5em;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .verified-name {
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
+    margin-bottom: 10px;
 }
 
 .checkmark {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-}
-
-/* Signup Form */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2em;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-form input {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    width: 100%;
-    padding: 0.7em;
-    background-color: #004080;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #003366;
-}
-
-/* Success Page */
-.success-page header {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 1.5em;
-}
-
-.success-page .container {
-    text-align: center;
-    padding: 2em;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.success-page .container p {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 2em;
-}
-
-.success-page .home-link {
-    display: inline-block;
-    padding: 0.7em 1.5em;
-    background-color: #0073e6;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.success-page .home-link:hover {
-    background-color: #005bb5;
-}
-
-/* Malaysia Page */
-.malaysia-container {
-    padding: 2em 1em;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 2em;
-}
-
-.malaysia-container h2 {
-    font-size: 2em;
-    color: #004080;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-.malaysia-container ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.malaysia-container ul li {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-}
-
-.malaysia-container ol {
-    padding-left: 20px;
-}
-
-.malaysia-container ol li {
-    margin-bottom: 1em;
-}
-
-.malaysia-container a {
-    color: #0073e6;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.malaysia-container a:hover {
-    text-decoration: underline;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
 /* Footer */
 footer {
-    background-color: #004080;
-    color: white;
+    background: #0066cc;
+    color: #fff;
     text-align: center;
-    padding: 1em;
-}
-
-footer p {
-    font-size: 1em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5em;
-        text-align: center;
-    }
-
-    nav .auth-buttons {
-        margin-top: 1em;
-    }
-
-    .logo {
-        font-size: 1.2em;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
